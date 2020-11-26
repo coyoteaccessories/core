@@ -1,0 +1,16 @@
+<?xml version='1.0'?>
+<config
+	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+	xsi:noNamespaceSchemaLocation='urn:magento:framework:ObjectManager/etc/config.xsd'
+>
+<!-- 2020-11-26
+«Argument 1 passed to Magento\InventorySourceDeductionApi\Model\IsItemCouldBeDeductedByTypes::execute()
+must be of the type string, null given,
+called in vendor/magento/module-inventory-shipping/Model/GetItemsToDeductFromShipment.php on line 210»:
+https://github.com/coyoteaccessories/site/issues/6 -->
+	<type name='Magento\Sales\Model\Order\Item'>
+		<plugin
+			name='Coyote\Core\Plugin\Magento\Sales\Model\Order\Item' type='Coyote\Core\Plugin\Magento\Sales\Model\Order\Item'
+		/>
+	</type>
+</config>
